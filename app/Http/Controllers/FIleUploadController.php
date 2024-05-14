@@ -38,8 +38,12 @@ class FileUploadController extends Controller
         ]);
         $extFile = $request->berkas->getClientOriginalName();
         $namaFile = 'web-'.time().".".$extFile;
-        $path = $request->berkas->storeAs('public',$namaFile);
-        $pathBaru = asset('storage/'.$namaFile);
+        
+        $path = $request->berkas->move('gambar',$namaFile);
+        $path = str_replace("\\","//",$path);
+        echo "Variabel path berisi : $path <br>";
+
+        $pathBaru = asset('gambar/'.$namaFile);
         echo "Proses Upload Berhasil, file berada di : ". $path;
         echo "<br>";
         echo "Tampilkan Link : <a href='$pathBaru'> $pathBaru </a> ";
