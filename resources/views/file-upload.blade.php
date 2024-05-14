@@ -24,7 +24,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary my-2">Uploadc</button>
+        <button type="submit" class="btn btn-primary my-2">Upload</button>
         </form>
     </div>
 
